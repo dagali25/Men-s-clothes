@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance UK | Premium Men's Kurta Pajama</title>
+    <title>Medusa | Luxury Men's Kurta Pajama</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0A2342;
+            --primary: #0D0D0D;
             --secondary: #D4AF37;
-            --accent: #8C705F;
+            --accent: #B90E0A;
+            --accent2: #1E22AA;
             --light: #F5F5F5;
-            --dark: #1A1A1A;
-            --text: #333333;
+            --text: #FFFFFF;
+            --background: #0D0D0D;
         }
         
         * {
@@ -23,15 +24,17 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text);
-            background-color: var(--light);
+            background-color: var(--background);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
         .container {
@@ -43,12 +46,13 @@
         /* Header Styles */
         header {
             background-color: var(--primary);
-            color: white;
+            color: var(--text);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid var(--secondary);
         }
         
         .header-content {
@@ -58,10 +62,24 @@
         }
         
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 15 L65 40 L95 45 L75 65 L80 95 L50 80 L20 95 L25 65 L5 45 L35 40 Z' fill='%23B90E0A'/%3E%3C/svg%3E");
+            background-size: contain;
+            top: -5px;
+            right: -25px;
         }
         
         nav ul {
@@ -70,18 +88,38 @@
         }
         
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
+            position: relative;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
         }
         
         nav ul li a:hover {
             color: var(--secondary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
         }
         
         .header-actions {
@@ -90,120 +128,191 @@
         }
         
         .header-actions i {
-            margin-left: 1.2rem;
-            font-size: 1.2rem;
+            margin-left: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: color 0.3s;
+            color: var(--text);
         }
         
         .header-actions i:hover {
-            color: var(--secondary);
+            color: var(--accent);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 90vh;
             display: flex;
             align-items: center;
-            color: white;
+            color: var(--text);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M20 20h60v60H20z' stroke='%23D4AF37' stroke-width='2' fill='none'/%3E%3Cpath d='M25 25h50v50H25z' stroke='%23D4AF37' stroke-width='1' fill='none'/%3E%3Cpath d='M30 30h40v40H30z' stroke='%23D4AF37' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.2;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+            font-style: italic;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: var(--light);
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
-            background-color: #c19b2c;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
         
         /* Collections Section */
         .section-title {
             text-align: center;
-            margin: 4rem 0 2rem;
+            margin: 5rem 0 3rem;
             position: relative;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             display: inline-block;
-            padding-bottom: 0.5rem;
+            padding: 0 1rem 1rem;
             position: relative;
+            text-transform: uppercase;
+        }
+        
+        .section-title h2::before, .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .section-title h2::before {
+            left: -60px;
         }
         
         .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--secondary);
-            bottom: 0;
-            left: 25%;
+            right: -60px;
         }
         
         .collections {
-            padding: 2rem 0;
+            padding: 3rem 0;
         }
         
         .collection-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .collection-card {
-            background-color: white;
-            border-radius: 10px;
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+        
+        .collection-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+            pointer-events: none;
         }
         
         .collection-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
         }
         
         .collection-img {
-            height: 300px;
+            height: 350px;
             overflow: hidden;
+            position: relative;
         }
         
         .collection-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.7s;
         }
         
         .collection-card:hover .collection-img img {
@@ -211,72 +320,144 @@
         }
         
         .collection-info {
-            padding: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
         }
         
         .collection-info h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .collection-info p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #ccc;
         }
         
         .price {
             color: var(--secondary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            display: block;
         }
         
         /* Features Section */
         .features {
-            background-color: var(--primary);
-            color: white;
-            padding: 4rem 0;
+            background: linear-gradient(to right, #1a1a1a, #0d0d0d);
+            color: var(--text);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M20 20h60v60H20z' stroke='%23B90E0A' stroke-width='2' fill='none'/%3E%3Cpath d='M25 25h50v50H25z' stroke='%23B90E0A' stroke-width='1' fill='none'/%3E%3Cpath d='M30 30h40v40H30z' stroke='%23B90E0A' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.1;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
         }
         
         .feature-card {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1.5rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.6);
+            border-color: var(--secondary);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .feature-card h3 {
             margin-bottom: 1rem;
+            color: var(--secondary);
+            font-size: 1.4rem;
+        }
+        
+        .feature-card p {
+            color: #ccc;
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 4rem 0;
-            background-color: white;
+            padding: 5rem 0;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M20 20h60v60H20z' stroke='%231E22AA' stroke-width='2' fill='none'/%3E%3Cpath d='M25 25h50v50H25z' stroke='%231E22AA' stroke-width='1' fill='none'/%3E%3Cpath d='M30 30h40v40H30z' stroke='%231E22AA' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.1;
         }
         
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
         }
         
         .testimonial-card {
-            background-color: var(--light);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            padding: 2.5rem;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1.5rem;
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            position: absolute;
+            left: 0;
+            top: -1rem;
+            font-size: 4rem;
+            color: var(--secondary);
+            font-family: sans-serif;
         }
         
         .testimonial-author {
@@ -285,11 +466,12 @@
         }
         
         .author-img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
+            border: 2px solid var(--secondary);
         }
         
         .author-img img {
@@ -298,25 +480,52 @@
             object-fit: cover;
         }
         
+        .author-info h4 {
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
         /* Newsletter */
         .newsletter {
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--accent2), var(--accent));
+            padding: 5rem 0;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M20 20h60v60H20z' stroke='%23FFFFFF' stroke-width='2' fill='none'/%3E%3Cpath d='M25 25h50v50H25z' stroke='%23FFFFFF' stroke-width='1' fill='none'/%3E%3Cpath d='M30 30h40v40H30z' stroke='%23FFFFFF' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.1;
         }
         
         .newsletter-content {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .newsletter h2 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
         }
         
         .newsletter p {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
         }
         
         .newsletter-form {
@@ -326,40 +535,57 @@
         }
         
         .newsletter-form input {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 1.5rem;
             border: none;
-            border-radius: 30px 0 0 30px;
-            width: 300px;
-            font-family: 'Poppins', sans-serif;
+            border-radius: 2px 0 0 2px;
+            width: 350px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
         }
         
         .newsletter-form button {
-            border-radius: 0 30px 30px 0;
+            border-radius: 0 2px 2px 0;
             border: none;
             cursor: pointer;
+            padding: 0 1.5rem;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--primary);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 5rem 0 2rem;
+            border-top: 2px solid var(--secondary);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
         }
         
         .footer-col h3 {
             color: var(--secondary);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
         }
         
         .footer-col p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
         }
         
         .footer-col ul {
@@ -374,10 +600,12 @@
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
+            display: block;
         }
         
         .footer-col ul li a:hover {
             color: var(--secondary);
+            transform: translateX(5px);
         }
         
         .social-icons {
@@ -399,38 +627,72 @@
         }
         
         .social-icons a:hover {
-            background-color: var(--secondary);
-            color: var(--dark);
+            background-color: var(--accent);
+            color: var(--light);
+            transform: translateY(-5px);
         }
         
         .copyright {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
+            margin-top: 5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
         }
         
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2::before,
+            .section-title h2::after {
+                width: 30px;
+            }
+            
+            .section-title h2::before {
+                left: -40px;
+            }
+            
+            .section-title h2::after {
+                right: -40px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
             }
             
             nav ul {
-                margin-top: 1rem;
+                margin: 1.5rem 0;
             }
             
             nav ul li {
-                margin-left: 1rem;
-                margin-right: 1rem;
+                margin-left: 1.2rem;
+                margin-right: 1.2rem;
+            }
+            
+            .hero {
+                height: 80vh;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .section-title h2::before,
+            .section-title h2::after {
+                display: none;
             }
             
             .newsletter-form {
@@ -439,14 +701,16 @@
             }
             
             .newsletter-form input {
-                border-radius: 30px;
+                border-radius: 2px;
                 margin-bottom: 1rem;
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
             }
             
             .newsletter-form button {
-                border-radius: 30px;
+                border-radius: 2px;
+                width: 100%;
+                max-width: 350px;
             }
         }
         
@@ -461,15 +725,27 @@
             }
             
             .hero {
-                height: 60vh;
+                height: 70vh;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
                 font-size: 1rem;
+            }
+            
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -478,7 +754,7 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">Elegance UK</div>
+            <div class="logo">Medusa</div>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -498,16 +774,16 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Elevate Your Style with Premium Kurta Pajamas</h1>
+            <h1>Luxury <span>Redefined</span><br>Kurta Pajama Collection</h1>
             <p>Discover our exclusive collection of handcrafted designer kurta pajamas for the modern gentleman</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn">Explore Collection</a>
         </div>
     </section>
 
     <!-- Collections Section -->
     <section class="collections container">
         <div class="section-title">
-            <h2>Our Collections</h2>
+            <h2>Signature Collections</h2>
         </div>
         <div class="collection-grid">
             <div class="collection-card">
@@ -515,9 +791,9 @@
                     <img src="https://images.unsplash.com/photo-1602810317536-5d5e8a493b55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Traditional Kurta">
                 </div>
                 <div class="collection-info">
-                    <h3>Traditional Elegance</h3>
-                    <p>Handcrafted with intricate embroidery</p>
-                    <div class="price">£49.99</div>
+                    <h3>Baroque Elegance</h3>
+                    <p>Handcrafted with intricate embroidery and gold thread work</p>
+                    <span class="price">£149.99</span>
                     <a href="#" class="btn">View Details</a>
                 </div>
             </div>
@@ -527,9 +803,9 @@
                     <img src="https://images.unsplash.com/photo-1591047139820-5c5c00683877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Modern Kurta">
                 </div>
                 <div class="collection-info">
-                    <h3>Modern Classic</h3>
-                    <p>Contemporary designs for the urban man</p>
-                    <div class="price">£39.99</div>
+                    <h3>Medusa Modern</h3>
+                    <p>Contemporary designs with Versace-inspired patterns</p>
+                    <span class="price">£129.99</span>
                     <a href="#" class="btn">View Details</a>
                 </div>
             </div>
@@ -539,9 +815,9 @@
                     <img src="https://images.unsplash.com/photo-1635003919934-5b6b3dd4d3fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Festive Kurta">
                 </div>
                 <div class="collection-info">
-                    <h3>Festive Collection</h3>
-                    <p>Celebrate in style with our festive designs</p>
-                    <div class="price">£59.99</div>
+                    <h3>Gilded Festive</h3>
+                    <p>Celebrate in luxury with our signature prints</p>
+                    <span class="price">£179.99</span>
                     <a href="#" class="btn">View Details</a>
                 </div>
             </div>
@@ -552,23 +828,23 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Us</h2>
+                <h2>Exquisite Craftsmanship</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
-                    <h3>Premium Fabrics</h3>
-                    <p>We use only the finest materials for ultimate comfort and style.</p>
+                    <h3>Luxury Fabrics</h3>
+                    <p>We use only the finest silk and cotton blends for ultimate comfort and style.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-hands"></i>
                     </div>
-                    <h3>Handcrafted Details</h3>
-                    <p>Each piece features exquisite handcrafted embroidery and detailing.</p>
+                    <h3>Artisanal Embroidery</h3>
+                    <p>Each piece features exquisite handcrafted embroidery with gold and silver thread.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -576,15 +852,15 @@
                         <i class="fas fa-truck"></i>
                     </div>
                     <h3>Free UK Shipping</h3>
-                    <p>Enjoy free shipping on all orders above £50.</p>
+                    <p>Enjoy free shipping on all orders above £150.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-medal"></i>
                     </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Every garment undergoes rigorous quality checks.</p>
+                    <h3>Heritage Quality</h3>
+                    <p>Every garment undergoes rigorous quality checks to ensure perfection.</p>
                 </div>
             </div>
         </div>
@@ -593,18 +869,18 @@
     <!-- Testimonials Section -->
     <section class="testimonials container">
         <div class="section-title">
-            <h2>What Our Customers Say</h2>
+            <h2>Testimonials</h2>
         </div>
         <div class="testimonial-grid">
             <div class="testimonial-card">
                 <div class="testimonial-text">
-                    "The quality of fabric and craftsmanship is exceptional. I received countless compliments at the wedding I attended."
+                    The quality of fabric and craftsmanship is exceptional. I received countless compliments at the wedding I attended. The gold embroidery is simply breathtaking.
                 </div>
                 <div class="testimonial-author">
                     <div class="author-img">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson">
                     </div>
-                    <div>
+                    <div class="author-info">
                         <h4>James Wilson</h4>
                         <p>London</p>
                     </div>
@@ -613,13 +889,13 @@
             
             <div class="testimonial-card">
                 <div class="testimonial-text">
-                    "Perfect fit and incredibly comfortable. The attention to detail is remarkable. Will definitely shop again!"
+                    Perfect fit and incredibly comfortable. The attention to detail is remarkable. The Medusa motif adds a luxurious touch that stands out.
                 </div>
                 <div class="testimonial-author">
                     <div class="author-img">
                         <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Thomas Brown">
                     </div>
-                    <div>
+                    <div class="author-info">
                         <h4>Thomas Brown</h4>
                         <p>Manchester</p>
                     </div>
@@ -628,13 +904,13 @@
             
             <div class="testimonial-card">
                 <div class="testimonial-text">
-                    "The modern designs are exactly what I was looking for. Traditional elegance with a contemporary twist."
+                    The modern designs are exactly what I was looking for. Traditional elegance with a contemporary twist. The vibrant colors are truly Versace-inspired.
                 </div>
                 <div class="testimonial-author">
                     <div class="author-img">
                         <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arjun Patel">
                     </div>
-                    <div>
+                    <div class="author-info">
                         <h4>Arjun Patel</h4>
                         <p>Birmingham</p>
                     </div>
@@ -646,8 +922,8 @@
     <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="container newsletter-content">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Be the first to know about new collections, exclusive offers, and style tips.</p>
+            <h2>Join the Medusa Society</h2>
+            <p>Subscribe to our newsletter for exclusive access to new collections and special members-only offers.</p>
             <div class="newsletter-form">
                 <input type="email" placeholder="Your email address">
                 <button class="btn">Subscribe</button>
@@ -660,8 +936,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Elegance UK</h3>
-                    <p>Premium designer kurta pajamas for the modern gentleman who values tradition and style.</p>
+                    <h3>Medusa</h3>
+                    <p>Luxury designer kurta pajamas for the modern gentleman who values tradition and opulent style.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -671,12 +947,12 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
+                    <h3>Collections</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Baroque Elegance</a></li>
+                        <li><a href="#">Medusa Modern</a></li>
+                        <li><a href="#">Gilded Festive</a></li>
+                        <li><a href="#">Signature Prints</a></li>
                     </ul>
                 </div>
                 
@@ -692,14 +968,14 @@
                 
                 <div class="footer-col">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, London</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, London</p>
                     <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@eleganceuk.com</p>
+                    <p><i class="fas fa-envelope"></i> info@medusaluxury.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Elegance UK. All rights reserved.</p>
+                <p>&copy; 2023 Medusa Luxury. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -730,7 +1006,7 @@
             const header = document.querySelector('header');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 100) {
-                    header.style.background = 'rgba(10, 35, 66, 0.95)';
+                    header.style.background = 'rgba(13, 13, 13, 0.95)';
                     header.style.backdropFilter = 'blur(10px)';
                 } else {
                     header.style.background = 'var(--primary)';
@@ -745,7 +1021,7 @@
                     e.preventDefault();
                     const emailInput = this.querySelector('input[type="email"]');
                     if(emailInput.value && emailInput.value.includes('@')) {
-                        alert('Thank you for subscribing to our newsletter!');
+                        alert('Thank you for subscribing to our exclusive newsletter!');
                         emailInput.value = '';
                     } else {
                         alert('Please enter a valid email address.');
