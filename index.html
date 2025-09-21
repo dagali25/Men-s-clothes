@@ -63,12 +63,14 @@
         
         .logo {
             font-family: 'Libre Baskerville', serif;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--secondary);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             position: relative;
+            display: flex;
+            align-items: center;
         }
         
         .logo::after {
@@ -156,9 +158,9 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('https://images.unsplash.com/photo-1600180758894-5a2c0dc89ff5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
-            background-position: center;
+            background-position: center 30%;
             height: 90vh;
             display: flex;
             align-items: center;
@@ -755,7 +757,15 @@
         
         @media (max-width: 576px) {
             .logo {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .logo::after {
+                width: 15px;
+                height: 15px;
+                right: -20px;
+                top: -3px;
             }
             
             .hero {
