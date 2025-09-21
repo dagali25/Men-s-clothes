@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medusa | Luxury Men's Kurta Pajama</title>
+    <title>The Royal Kurta | Luxury Men's Kurta Pajama</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -80,6 +80,21 @@
             background-size: contain;
             top: -5px;
             right: -25px;
+        }
+        
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        nav {
+            transition: all 0.3s ease;
         }
         
         nav ul {
@@ -541,7 +556,7 @@
             width: 350px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.99);
         }
         
         .newsletter-form button {
@@ -650,8 +665,7 @@
                 font-size: 2.2rem;
             }
             
-            .section-title h2::before,
-            .section-title h2::after {
+            .section-title h2::before, .section-title h2::after {
                 width: 30px;
             }
             
@@ -666,16 +680,42 @@
         
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .menu-toggle {
+                display: block;
+                z-index: 101;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: var(--primary);
+                z-index: 100;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                padding: 5rem 2rem 2rem;
+            }
+            
+            nav.active {
+                right: 0;
             }
             
             nav ul {
-                margin: 1.5rem 0;
+                flex-direction: column;
             }
             
             nav ul li {
-                margin-left: 1.2rem;
-                margin-right: 1.2rem;
+                margin: 1.5rem 0;
+            }
+            
+            .header-actions {
+                margin-left: auto;
             }
             
             .hero {
@@ -690,8 +730,7 @@
                 font-size: 2rem;
             }
             
-            .section-title h2::before,
-            .section-title h2::after {
+            .section-title h2::before, .section-title h2::after {
                 display: none;
             }
             
@@ -715,13 +754,8 @@
         }
         
         @media (max-width: 576px) {
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .header-actions {
-                margin-top: 1rem;
+            .logo {
+                font-size: 1.8rem;
             }
             
             .hero {
@@ -754,13 +788,16 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">Medusa</div>
-            <nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">The Royal Kurta</div>
+            <nav id="mainNav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Collections</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -772,16 +809,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>Luxury <span>Redefined</span><br>Kurta Pajama Collection</h1>
             <p>Discover our exclusive collection of handcrafted designer kurta pajamas for the modern gentleman</p>
-            <a href="#" class="btn">Explore Collection</a>
+            <a href="#collections" class="btn">Explore Collection</a>
         </div>
     </section>
 
     <!-- Collections Section -->
-    <section class="collections container">
+    <section class="collections container" id="collections">
         <div class="section-title">
             <h2>Signature Collections</h2>
         </div>
@@ -803,8 +840,8 @@
                     <img src="https://images.unsplash.com/photo-1591047139820-5c5c00683877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Modern Kurta">
                 </div>
                 <div class="collection-info">
-                    <h3>Medusa Modern</h3>
-                    <p>Contemporary designs with Versace-inspired patterns</p>
+                    <h3>Royal Modern</h3>
+                    <p>Contemporary designs with regal-inspired patterns</p>
                     <span class="price">£129.99</span>
                     <a href="#" class="btn">View Details</a>
                 </div>
@@ -812,7 +849,7 @@
             
             <div class="collection-card">
                 <div class="collection-img">
-                    <img src="https://images.unsplash.com/photo-1635003919934-5b6b3dd4d3fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Festive Kurta">
+                    <img src="https://images.unsplash.com/photo-1635003919934-5b6b3dd433fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Festive Kurta">
                 </div>
                 <div class="collection-info">
                     <h3>Gilded Festive</h3>
@@ -825,7 +862,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>Exquisite Craftsmanship</h2>
@@ -889,7 +926,7 @@
             
             <div class="testimonial-card">
                 <div class="testimonial-text">
-                    Perfect fit and incredibly comfortable. The attention to detail is remarkable. The Medusa motif adds a luxurious touch that stands out.
+                    Perfect fit and incredibly comfortable. The attention to detail is remarkable. The Royal motif adds a luxurious touch that stands out.
                 </div>
                 <div class="testimonial-author">
                     <div class="author-img">
@@ -904,7 +941,7 @@
             
             <div class="testimonial-card">
                 <div class="testimonial-text">
-                    The modern designs are exactly what I was looking for. Traditional elegance with a contemporary twist. The vibrant colors are truly Versace-inspired.
+                    The modern designs are exactly what I was looking for. Traditional elegance with a contemporary twist. The vibrant colors are truly regal-inspired.
                 </div>
                 <div class="testimonial-author">
                     <div class="author-img">
@@ -922,7 +959,7 @@
     <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="container newsletter-content">
-            <h2>Join the Medusa Society</h2>
+            <h2>Join The Royal Society</h2>
             <p>Subscribe to our newsletter for exclusive access to new collections and special members-only offers.</p>
             <div class="newsletter-form">
                 <input type="email" placeholder="Your email address">
@@ -932,11 +969,11 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Medusa</h3>
+                    <h3>The Royal Kurta</h3>
                     <p>Luxury designer kurta pajamas for the modern gentleman who values tradition and opulent style.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -949,10 +986,10 @@
                 <div class="footer-col">
                     <h3>Collections</h3>
                     <ul>
-                        <li><a href="#">Baroque Elegance</a></li>
-                        <li><a href="#">Medusa Modern</a></li>
-                        <li><a href="#">Gilded Festive</a></li>
-                        <li><a href="#">Signature Prints</a></li>
+                        <li><a href="#collections">Baroque Elegance</a></li>
+                        <li><a href="#collections">Royal Modern</a></li>
+                        <li><a href="#collections">Gilded Festive</a></li>
+                        <li><a href="#collections">Signature Prints</a></li>
                     </ul>
                 </div>
                 
@@ -970,12 +1007,12 @@
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, London</p>
                     <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@medusaluxury.com</p>
+                    <p><i class="fas fa-envelope"></i> info@theroyalkurta.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Medusa Luxury. All rights reserved.</p>
+                <p>&copy; 2023 The Royal Kurta. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -983,11 +1020,41 @@
     <script>
         // Simple JavaScript for interactive elements
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                
+                // Change icon based on menu state
+                const icon = menuToggle.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                });
+            });
+            
             // Add to cart animation
             const cartButtons = document.querySelectorAll('.btn');
             cartButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    if(this.tagName === 'A') e.preventDefault();
+                    if(this.tagName === 'A' && this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
                     
                     // Animation for button click
                     this.style.transform = 'scale(0.95)';
@@ -1028,6 +1095,25 @@
                     }
                 });
             }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if(this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
